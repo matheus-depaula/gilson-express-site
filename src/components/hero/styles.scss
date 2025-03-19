@@ -1,0 +1,53 @@
+.hero {
+  flex-direction: column;
+  background-color: $secondary-color;
+
+  .logo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      width: 32rem;
+    }
+
+    .hero-navbar {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: flex-end;
+      opacity: 1;
+
+      nav {
+        padding: 1rem;
+      }
+
+      .logo {
+        display: none;
+      }
+    }
+  }
+
+  .content {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+
+    p {
+      font-size: 1.75rem;
+    }
+
+    button {
+      width: 50%;
+      height: 5rem;
+      align-self: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      border-width: 0.125rem;
+    }
+  }
+}

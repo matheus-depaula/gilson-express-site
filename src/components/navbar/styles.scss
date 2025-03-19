@@ -1,0 +1,41 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  z-index: 1000;
+  opacity: 0;
+
+  transition: 0.2s ease;
+
+  &--scrolled {
+    opacity: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: $secondary-color !important;
+
+    nav {
+      .logo {
+        opacity: 1 !important;
+      }
+    }
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+
+    .logo {
+      opacity: 0;
+      width: 14.5rem;
+      cursor: pointer;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 1rem;
+    }
+  }
+}

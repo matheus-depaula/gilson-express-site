@@ -1,0 +1,20 @@
+$section-padding: 2rem;
+
+.section {
+  display: flex;
+  padding: $section-padding;
+
+  &--primary {
+    color: $text-color-dark;
+    background-color: $primary-background-color;
+  }
+
+  &--secondary {
+    color: $text-color-light;
+    background-color: $secondary-background-color;
+  }
+
+  &--full-height {
+    height: calc(100vh - $section-padding * 2); // multiply to get top and bottom padding
+  }
+}
