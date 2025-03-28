@@ -24,7 +24,7 @@ export const Navbar: React.FC<Props> = ({ className }) => {
 
       const position = window.scrollY;
       const heroLogoHeight = document.getElementById('hero-logo')?.getBoundingClientRect().height;
-      const offset = (heroLogoHeight || DEFAULT_HERO_LOGO_HEIGHT) + SECTION_FIXED_PADDING;
+      const offset = (heroLogoHeight || DEFAULT_HERO_LOGO_HEIGHT) + SECTION_FIXED_PADDING + 150;
 
       setIsScrolled(position >= offset);
     };

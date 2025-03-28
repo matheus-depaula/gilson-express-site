@@ -1,0 +1,33 @@
+$margin: 20px;
+
+.modalities {
+  justify-content: center;
+
+  .cards {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: calc(2rem + $margin);
+    margin-bottom: $margin;
+    gap: 2rem;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
+
+    .card > .card-content {
+      display: flex;
+      flex-direction: column;
+
+      svg {
+        align-self: center;
+        color: $secondary-background-color;
+        font-size: 6rem;
+      }
+
+      p > strong {
+        color: $primary-color-dark;
+      }
+    }
+  }
+}

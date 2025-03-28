@@ -1,0 +1,25 @@
+.customers {
+  justify-content: center;
+
+  .customers-logos {
+    max-width: 1200px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+
+    img {
+      max-width: 200px;
+      height: max-content;
+
+      filter: grayscale(100%);
+      transition: all 0.1s ease-in-out;
+
+      &:hover {
+        filter: grayscale(0);
+      }
+    }
+  }
+}

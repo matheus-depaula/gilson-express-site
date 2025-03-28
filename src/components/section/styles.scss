@@ -17,4 +17,9 @@ $section-padding: 2rem;
   &--full-height {
     height: calc(100vh - $section-padding * 2); // multiply to get top and bottom padding
   }
+
+  &--auto-height {
+    height: auto;
+    padding: 0 $section-padding;
+  }
 }

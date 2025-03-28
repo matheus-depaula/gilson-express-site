@@ -1,15 +1,17 @@
 .hero {
+  height: 100vh;
   flex-direction: column;
+  padding: 0 2rem;
   background-color: $secondary-color;
+  background-image: url('../../assets/images/hero-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
   .logo-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    .logo {
-      width: 32rem;
-    }
 
     .hero-navbar {
       position: relative;
@@ -35,19 +37,29 @@
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
-    padding: 2rem;
+    padding: 0 2rem;
 
-    p {
-      font-size: 1.75rem;
+    .logo {
+      width: 39rem;
     }
 
-    button {
-      width: 50%;
-      height: 5rem;
-      align-self: center;
-      font-size: 1.5rem;
-      font-weight: 700;
-      border-width: 0.125rem;
+    > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      p {
+        font-size: 1.75rem;
+      }
+
+      button {
+        width: 50%;
+        height: 5rem;
+        align-self: center;
+        font-size: 1.5rem;
+        font-weight: 700;
+        border-width: 0.125rem;
+      }
     }
   }
 }
