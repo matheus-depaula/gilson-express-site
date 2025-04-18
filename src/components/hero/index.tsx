@@ -14,7 +14,7 @@ export const Hero: React.FC = () => {
   const handleQuoteClick = () => {
     const anchor = NAVBAR_ITEMS.find(e => e.label === 'Contato');
 
-    if (anchor) scrollTo(anchor?.href);
+    if (anchor) scrollTo(anchor.href);
   };
 
   return (

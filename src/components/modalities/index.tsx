@@ -26,7 +26,9 @@ export const Modalities: React.FC = () => {
       }
     }
 
-    scrollTo(NAVBAR_ITEMS.find(e => e.label === 'Contato')?.href || '#');
+    const anchor = NAVBAR_ITEMS.find(e => e.label === 'Contato');
+
+    if (anchor) scrollTo(anchor.href);
   };
 
   return (
