@@ -1,70 +1,101 @@
 .contact {
-  padding: 4rem;
-  justify-content: space-between;
+  display: flex;
+  justify-content: center;
 
   @media screen and (max-width: 768px) {
+    padding: 2rem;
     flex-direction: column;
-    gap: 2rem;
+    justify-content: space-between !important;
+
+    .doubts-section,
+    .contact-section {
+      width: 100% !important;
+      padding: 0;
+    }
+
+    .doubts-section {
+      .main-content-content {
+        .title {
+          align-self: center !important;
+        }
+      }
+
+      p {
+        margin: 0;
+        font-size: 1.5rem !important;
+      }
+    }
   }
 
-  .contact-info {
-    flex: 1;
+  .doubts-section {
+    width: 50%;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     gap: 1rem;
 
     p {
       font-size: 2rem;
     }
 
-    .contact-info-items {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
+    .main-content-content {
+      .title {
+        align-self: flex-start;
+      }
 
-      a {
+      .contact-info-items {
+        width: 100%;
         display: flex;
-        align-items: center;
+        flex-direction: column;
         gap: 0.5rem;
-        width: fit-content;
 
-        transition: color 0.125s;
+        a {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          width: fit-content;
 
-        svg {
-          color: $primary-color;
-          font-size: 1.375rem;
-        }
+          transition: color 0.125s;
 
-        &:hover {
-          color: $primary-color;
+          svg {
+            color: $primary-color;
+            font-size: 1.375rem;
+          }
+
+          &:hover {
+            color: $primary-color;
+          }
         }
       }
     }
   }
 
-  .contact-form {
+  .contact-section {
+    width: 50%;
     display: flex;
     flex-direction: column;
     gap: 3.5rem;
 
     form {
+      width: 100%;
       display: flex;
       flex-direction: column;
       gap: 0.75rem;
 
       input,
+      select,
       textarea {
         padding: 0.75rem 0.5rem;
+        border: 1px solid $secondary-background-color-dark;
         border-radius: 0.25rem;
 
         font-size: 1rem;
-        font-family: 'Codec Pro', sans-serif;
+        font-family: $font-codec-pro;
         background-color: $primary-background-color;
 
         &::placeholder {
-          color: $text-color-dark;
+          color: rgba($text-color-dark, 0.5);
           font-size: 1rem;
-          opacity: 0.5;
         }
 
         &:focus {
@@ -72,14 +103,14 @@
         }
       }
 
+      option[disabled] {
+        color: rgba($text-color-dark, 0.5);
+      }
+
       textarea {
         resize: none;
         height: 7rem;
       }
-    }
-
-    @media screen and (max-width: 768px) {
-      margin-top: 2rem;
     }
   }
 }

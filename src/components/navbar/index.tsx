@@ -1,21 +1,22 @@
 import { useEffect, useState } from 'react';
-import classNames from 'classnames';
+import cn from 'classnames';
 import { useNavigation } from '@/hooks/useNavigation';
 import { Button } from '@/components/button';
 import { NAVBAR_ITEMS } from './constants';
 
-import logo from '/images/logo.png';
+import logo from '/images/logo-no-description.png';
 import './styles.scss';
 
 interface Props {
   className?: string;
+  unclickable?: boolean;
 }
 
-export const Navbar: React.FC<Props> = ({ className }) => {
+export const Navbar: React.FC<Props> = ({ className, unclickable }) => {
   const { scrollTo } = useNavigation();
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const navbarClass = classNames('navbar', { 'navbar--scrolled': isScrolled }, className);
+  const navbarClass = cn('navbar', { 'navbar--scrolled': isScrolled, 'navbar--unclickable': unclickable }, className);
 
   useEffect(() => {
     const handleScroll = () => {

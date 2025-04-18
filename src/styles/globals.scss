@@ -21,7 +21,8 @@ body {
   background-color: $secondary-background-color;
   color: $text-color-light;
   font-size: 1.25rem;
-  font-family: 'Codec Pro', sans-serif;
+  font-family: $font-codec-pro;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -38,7 +39,7 @@ h5,
 h6,
 .text-primary {
   color: $primary-color;
-  font-family: 'Garet', sans-serif;
+  font-family: $font-garet;
   font-weight: normal;
 }
 

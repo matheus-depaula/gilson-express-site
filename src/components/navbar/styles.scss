@@ -1,15 +1,20 @@
 .navbar {
+  z-index: -1;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: transparent;
-  z-index: 1000;
   opacity: 0;
+  background-color: transparent;
 
   transition: 0.2s ease;
 
+  &--unclickable {
+    pointer-events: none;
+  }
+
   &--scrolled {
+    z-index: 1000;
     opacity: 1;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: $secondary-color !important;
@@ -26,6 +31,14 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 3rem;
+
+    @media screen and (max-width: 768px) {
+      justify-content: center;
+
+      .nav-buttons {
+        display: none !important;
+      }
+    }
 
     .logo {
       opacity: 0;

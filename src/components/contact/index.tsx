@@ -1,9 +1,8 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import emailJs from '@emailjs/browser';
-import { Section } from '@/components/section';
 import { Button } from '@/components/button';
 import { FaEnvelope, FaPhone, FaWhatsapp } from 'react-icons/fa6';
 import { Bounce, toast, ToastContainer, ToastOptions } from 'react-toastify';
+import { MainContent } from '@/components/main-content';
 
 import './styles.scss';
 
@@ -11,8 +10,11 @@ export const Contact: React.FC = () => {
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const serviceId = 'default_service';
-    const templateId = '';
+    const { currentTarget: form } = event;
+
+    const publicKey = 'bWsRYLQr6rBS_5lzR';
+    const serviceId = 'service_nvr17qb';
+    const templateId = 'template_g9pzbkn';
 
     const toastOptions: ToastOptions = {
       position: 'bottom-right',
@@ -26,54 +28,54 @@ export const Contact: React.FC = () => {
       transition: Bounce,
     };
 
-    emailJs.sendForm(serviceId, templateId, event.currentTarget).then(
-      _response => {
-        toast.success('Email enviado com sucesso!', toastOptions);
-      },
-      _error => {
+    emailJs.sendForm(serviceId, templateId, form, { publicKey }).then(
+      _ => toast.success('Email enviado com sucesso!', toastOptions),
+      failure => {
+        console.error(failure);
         toast.error('Falha ao enviar o email!', toastOptions);
       }
     );
   };
 
   return (
-    <>
-      <Section id="contact" variant="secondary" className="contact">
-        <div className="contact-info">
-          <h1>Dúvidas?</h1>
+    <div id="contact" className="contact">
+      <MainContent className="doubts-section" title="Dúvidas?" sectionVariant="secondary">
+        <p>Entre em contato conosco através de nossos canais de atendimento abaixo.</p>
 
-          <p>Entre em contato conosco através de nossos canais de atendimento abaixo.</p>
+        <div className="contact-info-items">
+          <a href="https://wa.me/5512974042398">
+            <FaWhatsapp /> 12 97404-2398
+          </a>
 
-          <div className="contact-info-items">
-            <a href="https://wa.me/5512974042398">
-              <FaWhatsapp /> 12 97404-2398
-            </a>
+          <a href="tel:1239537998">
+            <FaPhone /> 12 3953-7998
+          </a>
 
-            <a href="tel:1239537998">
-              <FaPhone /> 12 3953-7998
-            </a>
-
-            <a href="mailto:expressogilson1@gmail.com">
-              <FaEnvelope /> expressogilson1@gmail.com
-            </a>
-          </div>
+          <a href="mailto:expressogilson1@gmail.com">
+            <FaEnvelope /> expressogilson1@gmail.com
+          </a>
         </div>
+      </MainContent>
 
-        <div className="contact-form">
-          <h1>Nos envie um email</h1>
+      <MainContent className="contact-section" title="Nos envie um email" sectionVariant="secondary">
+        <form onSubmit={handleFormSubmit} id="contact-form">
+          <input type="text" name="name" placeholder="Nome" required />
+          <input type="email" name="email" placeholder="Email" required />
+          <select name="subject" id="subject">
+            <option value="" disabled selected>
+              Selecione um assunto
+            </option>
+            <option value="Cotação dedicado">Cotação dedicado</option>
+            <option value="Cotação fracionado">Cotação fracionado</option>
+            <option value="Outro">Outro</option>
+          </select>
+          <textarea name="message" placeholder="Mensagem" required></textarea>
 
-          <form onSubmit={handleFormSubmit}>
-            <input type="text" name="name" placeholder="Nome" required />
-            <input type="email" name="email" placeholder="Email" required />
-            <input type="text" name="subject" placeholder="Assunto" required />
-            <textarea name="message" placeholder="Mensagem" required></textarea>
-
-            <Button variant="primary" size="large" fullWidth type="submit">
-              Enviar
-            </Button>
-          </form>
-        </div>
-      </Section>
+          <Button variant="primary" size="large" fullWidth type="submit">
+            Enviar
+          </Button>
+        </form>
+      </MainContent>
 
       <ToastContainer
         position="top-right"
@@ -88,6 +90,6 @@ export const Contact: React.FC = () => {
         theme="light"
         transition={Bounce}
       />
-    </>
+    </div>
   );
 };

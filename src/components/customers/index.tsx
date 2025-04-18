@@ -7,6 +7,7 @@ import servNewsLogo from '@/assets/images/customers/serv-news-logo.png';
 import emaxAutomacao from '@/assets/images/customers/emax-automacao-logo.png';
 import raccortubiLogo from '@/assets/images/customers/raccortubi-logo.png';
 import robotconLogo from '@/assets/images/customers/robotcon-logo.png';
+import idealLogo from '@/assets/images/customers/ideal-logo.png';
 import './styles.scss';
 
 export const Customers: React.FC = () => {
@@ -20,6 +21,7 @@ export const Customers: React.FC = () => {
         <img src={emaxAutomacao} alt="Logo da Emax Automação" title="Emax Automação" />
         <img src={robotconLogo} alt="Logo da Robotcon" title="Robotcon" />
         <img src={raccortubiLogo} alt="Logo da Raccortubi" title="Raccortubi" />
+        <img src={idealLogo} alt="Logo da Ideal" title="Ideal" />
       </div>
     </MainContent>
   );

@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
 
         <span>
           Desenvolvido com <FaHeart /> por{' '}
-          <a href="https://depauladomingos.com" target="_blank">
+          <a href="https://www.linkedin.com/in/matheuspdomingos/" target="_blank">
             Matheus Domingos
           </a>
         </span>

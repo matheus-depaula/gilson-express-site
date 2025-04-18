@@ -9,6 +9,20 @@
 
     .title {
       color: $primary-color;
+      text-align: center;
+    }
+
+    @media screen and (min-width: 1820px) {
+      padding-left: 20%;
+      padding-right: 20%;
+    }
+
+    @media screen and (max-width: 768px) {
+      padding: 2rem 0 !important;
+
+      .title {
+        font-size: 3rem;
+      }
     }
   }
 }

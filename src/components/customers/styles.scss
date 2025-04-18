@@ -9,10 +9,12 @@
     justify-content: center;
     gap: 2rem;
     flex-wrap: wrap;
+    margin-top: 1rem;
 
     img {
       max-width: 200px;
       height: max-content;
+      max-height: 100px;
 
       filter: grayscale(100%);
       transition: all 0.1s ease-in-out;
