@@ -17,7 +17,12 @@ export const Modalities: React.FC = () => {
       const selectInput = form.querySelector('select#subject') as HTMLSelectElement;
 
       if (selectInput) {
-        selectInput.value = type;
+        const mapper: Record<typeof type, string> = {
+          fractionated: 'Cotação fracionado',
+          dedicated: 'Cotação dedicado',
+        };
+
+        selectInput.value = mapper[type];
         selectInput.dispatchEvent(new Event('change'));
 
         const event = new Event('change', { bubbles: true });
